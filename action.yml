@@ -7,7 +7,7 @@ inputs:
   comment_for_invalid_branch_name:
     description: 'Comment that will be written if the branch name does not follow the branch pattern'
     required: false
-  comment_for_invalid_branch_name:
+  comment_for_valid_branch_name:
     description: 'Comment that will be written if the branch name follow the branch pattern'
     required: false  
   fail_if_invalid_branch_name:
