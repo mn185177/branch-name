@@ -23,7 +23,7 @@ jobs:
         with:
           branch_pattern: 'feature|bug|hotfix'
           comment_for_invalid_branch_name: 'Ups! This branch name is not following the standards! You can see them here: https://github.com/mn185177'
-		  comment_for_invalid_branch_name: 'This branch name is fallowing standards'
+		  comment_for_valid_branch_name: 'This branch name is fallowing standards'
           fail_if_invalid_branch_name: 'true'
           ignore_branch_pattern: 'master|beta'
     env:
