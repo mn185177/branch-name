@@ -1,7 +1,7 @@
 const writeComment = require('./github/write-comment');
 
 const DEFAULT_COMMENT_FOR_INVALID_BRANCH_NAME = 'The name of this branch is not \n following the standards of this project!';
-
+const DEFAULT_COMMENT_FOR_VALID_BRANCH_NAME = 'The name of this branch is fallowing \n the standards of this project!';
 module.exports = async tools => {
   const branchPattern = tools.inputs.branch_pattern;
   const failIfInvalidBranchName = tools.inputs.fail_if_invalid_branch_name;
