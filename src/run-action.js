@@ -8,25 +8,25 @@ module.exports = async tools => {
   const ignoreBranchPattern = tools.inputs.ignore_branch_pattern;
   const commentForInvalidBranchName = tools.inputs.comment_for_invalid_branch_name || DEFAULT_COMMENT_FOR_INVALID_BRANCH_NAME;
   const commentForValidBranchName = tools.inputs.comment_for_valid_branch_name || DEFAULT_COMMENT_FOR_VALID_BRANCH_NAME;
-  const branchName = tools.context.payload.pull_request.head.ref;
+  const branchName = tools.context.payload.pull_request.title;
 	tools.log.info(tools.context.payload.pull_request.title);
   const isValidBranchName = new RegExp(branchPattern).test(branchName);
 
   if (ignoreBranchPattern) {
     const isIgnoredBranch = new RegExp(ignoreBranchPattern).test(branchName);
     if (isIgnoredBranch) {
-      tools.log.info('This branch should be ignored');
+      tools.log.info('This PR should be ignored');
       return;
     }
   }
 
   if (isValidBranchName) {
-    tools.log.info('This branch has a valid name');
+    tools.log.info('This PR has valid subject');
 	await writeComment(tools, commentForValidBranchName);
     return;
   }
 
-  tools.log.info('This branch has an invalid name');
+  tools.log.info('This PR has invalid subject');
 
   await writeComment(tools, commentForInvalidBranchName);
 
