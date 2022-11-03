@@ -1,6 +1,6 @@
 module.exports = {
   branch_pattern: {
-    required: true,
+    required: false,
   },
   fail_if_invalid_branch_name: {
     required: false,
