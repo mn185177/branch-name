@@ -5,7 +5,7 @@ const DEFAULT_COMMENT_FOR_VALID_BRANCH_NAME = 'The name of this branch is fallow
 module.exports = async tools => {
   const branchPattern = /\D+-\d+/;
   const failIfInvalidBranchName = tools.inputs.fail_if_invalid_branch_name;
-  const ignoreBranchPattern = master|qa*|rel-*;
+  const ignoreBranchPattern = 'master|qa*|rel-*';
   const commentForInvalidBranchName = tools.inputs.comment_for_invalid_branch_name || DEFAULT_COMMENT_FOR_INVALID_BRANCH_NAME;
   const commentForValidBranchName = tools.inputs.comment_for_valid_branch_name || DEFAULT_COMMENT_FOR_VALID_BRANCH_NAME;
   const branchName = tools.context.payload.pull_request.title;
