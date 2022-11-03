@@ -3,7 +3,7 @@ description: Write a comment in the PR if your branch is not following a predefi
 inputs:
   branch_pattern:
     description: 'Pattern that should follow the names of the branches'
-    required: true
+    required: false
   comment_for_invalid_branch_name:
     description: 'Comment that will be written if the branch name does not follow the branch pattern'
     required: false
