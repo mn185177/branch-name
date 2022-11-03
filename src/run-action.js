@@ -22,13 +22,13 @@ module.exports = async tools => {
 
   if (isValidBranchName) {
     tools.log.info('This PR has valid subject');
-	  commentForValidBranchName = 'The PR Subject ['+isValidBranchName+'] is fallowing SRE Dev standars!'
+	  commentForValidBranchName = 'The PR Subject ['+branchName+'] is fallowing SRE Dev standars!'
 	await writeComment(tools, commentForValidBranchName);
     return;
   }
 
   tools.log.info('This PR has invalid subject');
-commentForInvalidBranchName = 'The PR Subject ['+isValidBranchName+'] is not fallowing SRE Dev standars! Please check them here https://confluence.ncr.com/display/FSSRE/SRE+Development+Process'
+commentForInvalidBranchName = 'The PR Subject ['+branchName+'] is not fallowing SRE Dev standars! Please check them here https://confluence.ncr.com/display/FSSRE/SRE+Development+Process'
   await writeComment(tools, commentForInvalidBranchName);
 
   if (failIfInvalidBranchName === 'true') {
