@@ -9,7 +9,7 @@ module.exports = async tools => {
   const commentForInvalidBranchName = tools.inputs.comment_for_invalid_branch_name || DEFAULT_COMMENT_FOR_INVALID_BRANCH_NAME;
   const commentForValidBranchName = tools.inputs.comment_for_valid_branch_name || DEFAULT_COMMENT_FOR_VALID_BRANCH_NAME;
   const branchName = tools.context.payload.pull_request.head.ref;
-	tools.log.info(tools.context.payload.pull_request);
+	tools.log.info(tools.context.payload.pull_request.title);
   const isValidBranchName = new RegExp(branchPattern).test(branchName);
 
   if (ignoreBranchPattern) {
